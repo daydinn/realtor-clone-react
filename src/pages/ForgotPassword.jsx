@@ -21,7 +21,7 @@ export default function ForgotPassword() {
     try{
       const auth= getAuth()
       await sendPasswordResetEmail(auth,email);
-      toast.success("Email was sent");
+      toast.success("Email was sent if it exists ");
 
     }
     catch(error){
