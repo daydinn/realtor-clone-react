@@ -1,6 +1,8 @@
 import React from 'react';
 import { Outlet, Navigate} from 'react-router-dom';
 import{ useAuthStatus } from '../hooks/useAuthStatus';
+import Spinner from "./Spinner";
+
 
 
 export default function PrivateRoute() {
@@ -9,7 +11,7 @@ export default function PrivateRoute() {
 
     if(checkingStatus){
 
-      return <h3>Loading...</h3>  
+      return <Spinner/>
     }
   return loggedIn ? <Outlet/>   :     <Navigate to="/sign-in"    />;       //if loggedIn true we become everything inside this route
       //otherwise we wanna redirect the person to the signin page
